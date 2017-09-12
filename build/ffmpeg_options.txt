@@ -1,0 +1,4 @@
+# Lines starting with this character are ignored
+--enable-libmp3lame
+--enable-libfdk-aac
+--enable-libsoxr

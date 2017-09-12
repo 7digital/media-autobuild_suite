@@ -189,16 +189,16 @@ if [[ "$mplayer" = "y" ]] || ! mpv_disabled libass ||
     _check=(ass/ass{,_types}.h libass.{{,l}a,pc})
     _deps=(lib{freetype,fontconfig,harfbuzz,fribidi}.a)
     [[ $ffmpeg = "sharedlibs" ]] && _check+=(bin-video/libass-9.dll libass.dll.a)
-    if do_vcs "https://github.com/libass/libass.git"; then
-        do_autoreconf
-        do_uninstall bin{,-video}/libass-9.dll libass.dll.a include/ass "${_check[@]}"
-        extracommands=()
-        enabled_any {lib,}fontconfig || extracommands+=(--disable-fontconfig)
-        [[ $ffmpeg = "sharedlibs" ]] && extracommands+=(--disable-{harfbuzz,fontconfig} --enable-shared)
-        do_separate_confmakeinstall "${extracommands[@]}"
-        [[ $ffmpeg = "sharedlibs" ]] && do_install "$LOCALDESTDIR"/bin/libass-9.dll bin-video/
-        do_checkIfExist
-    fi
+    #if do_vcs "https://github.com/libass/libass.git"; then
+    #    do_autoreconf
+    #    do_uninstall bin{,-video}/libass-9.dll libass.dll.a include/ass "${_check[@]}"
+    #    extracommands=()
+    #    enabled_any {lib,}fontconfig || extracommands+=(--disable-fontconfig)
+    #    [[ $ffmpeg = "sharedlibs" ]] && extracommands+=(--disable-{harfbuzz,fontconfig} --enable-shared)
+    #    do_separate_confmakeinstall "${extracommands[@]}"
+    #    [[ $ffmpeg = "sharedlibs" ]] && do_install "$LOCALDESTDIR"/bin/libass-9.dll bin-video/
+    #    do_checkIfExist
+    #fi
     if [[ $ffmpeg != "sharedlibs" ]]; then
         find "$LOCALDESTDIR/lib" -name "*.dll.a" -exec rm -f '{}' \;
     fi
@@ -831,35 +831,35 @@ fi
 unset _deps
 
 _check=(libbluray.{{l,}a,pc})
-if { { [[ $ffmpeg != "no" ]] && enabled libbluray; } || ! mpv_disabled libbluray; } &&
-    do_vcs "https://git.videolan.org/git/libbluray.git"; then
-    [[ -f contrib/libudfread/.git ]] || log git.submodule git submodule update --init
-    do_autoreconf
-    do_uninstall include/libbluray share/java "${_check[@]}"
-    sed -i 's|__declspec(dllexport)||g' jni/win32/jni_md.h
-    extracommands=()
-    JAVA_HOME="$(get_java_home)"
-    OLD_PATH="$PATH"
-    if [[ -n "$JAVA_HOME" ]]; then
-        if [[ ! -f /opt/apache-ant/bin/ant ]]; then
-            do_wget -r -c -h 0a4530999b71f92bf17ae823ed3b0b2d \
-                "https://www.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.zip" \
-                apache-ant.zip
-            mv apache-ant/apache-ant* /opt/apache-ant
-        fi
-        PATH="/opt/apache-ant/bin:$JAVA_HOME/bin:$PATH"
-        log ant-diagnostics ant -diagnostics
-        export JDK_HOME=""
-        export JAVA_HOME
-    else
-        extracommands+=(--disable-bdjava-jar)
-    fi
-    do_separate_confmakeinstall --disable-{examples,doxygen-doc} \
-        --without-{libxml2,fontconfig,freetype} "${extracommands[@]}"
-    do_checkIfExist
-    PATH="$OLD_PATH"
-    unset extracommands JDK_HOME JAVA_HOME OLD_PATH
-fi
+# if { { [[ $ffmpeg != "no" ]] && enabled libbluray; } || ! mpv_disabled libbluray; } &&
+    # do_vcs "https://git.videolan.org/git/libbluray.git"; then
+    # [[ -f contrib/libudfread/.git ]] || log git.submodule git submodule update --init
+    # do_autoreconf
+    # do_uninstall include/libbluray share/java "${_check[@]}"
+    # sed -i 's|__declspec(dllexport)||g' jni/win32/jni_md.h
+    # extracommands=()
+    # JAVA_HOME="$(get_java_home)"
+    # OLD_PATH="$PATH"
+    # if [[ -n "$JAVA_HOME" ]]; then
+        # if [[ ! -f /opt/apache-ant/bin/ant ]]; then
+            # do_wget -r -c -h 0a4530999b71f92bf17ae823ed3b0b2d \
+                # "https://www.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.zip" \
+                # apache-ant.zip
+            # mv apache-ant/apache-ant* /opt/apache-ant
+        # fi
+        # PATH="/opt/apache-ant/bin:$JAVA_HOME/bin:$PATH"
+        # log ant-diagnostics ant -diagnostics
+        # export JDK_HOME=""
+        # export JAVA_HOME
+    # else
+        # extracommands+=(--disable-bdjava-jar)
+    # fi
+    # do_separate_confmakeinstall --disable-{examples,doxygen-doc} \
+        # --without-{libxml2,fontconfig,freetype} "${extracommands[@]}"
+    # do_checkIfExist
+    # PATH="$OLD_PATH"
+    # unset extracommands JDK_HOME JAVA_HOME OLD_PATH
+# fi
 
 _check=(libxavs.a xavs.{h,pc})
 if [[ $ffmpeg != "no" ]] && enabled libxavs && do_pkgConfig "xavs = 0.1." "0.1" &&

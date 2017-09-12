@@ -1,0 +1,146 @@
+]0;media-autobuild_suite (64bit)
+	[311mStarting 64bit compilation of all tools(B[m
+Imported FFmpeg options from ffmpeg_options.txt
+License: nonfree
+Imported mpv options from mpv_options.txt
+]0;media-autobuild_suite (64bit): compiling global tools
+	[311mStarting 64bit compilation of global tools(B[m
+[1mfreetype2 2.8.0 (B[m........................................... [[32mUp-to-date(B[m]
+  Running git update for harfbuzz...
+[1mharfbuzz git (B[m.............................................. [[32mUp-to-date(B[m]
+[1mfribidi 0.19.7 (B[m............................................ [[32mUp-to-date(B[m]
+  Running git update for libass...
+[1m┌ libass git (B[m........................................... [[311mFiles missing(B[m]
+├ Running configure...
+Likely error:
+checking for dlltool... dlltool
+checking how to associate runtime and link libraries... func_cygming_dll_for_implib
+checking for x86_64-w64-mingw32-ar... no
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for x86_64-w64-mingw32-strip... no
+checking for strip... strip
+checking for x86_64-w64-mingw32-ranlib... no
+checking for ranlib... ranlib
+checking command to parse /mingw64/bin/nm -B output from gcc object... [31mconfigure failed. Check C:/Development/media-autobuild_suite/build/libass-git/build-64bit/ab-suite.configure.log(B[m
+[31mThis is required for other packages, so this script will exit.(B[m
+  Creating diagnostics file...
+
+[32mAll relevant logs have been anonymously uploaded to https://0x0.st/7PM.zip
+[32mCopy and paste [31m[logs.zip](https://0x0.st/7PM.zip)[32m in the GitHub issue.(B[m
+Make sure the suite is up-to-date before reporting an issue. It might've been fixed already.
+Try running the build again at a later time.]0;media-autobuild_suite (64bit)
+	[311mStarting 64bit compilation of all tools(B[m
+Imported FFmpeg options from ffmpeg_options.txt
+License: nonfree
+Imported mpv options from mpv_options.txt
+]0;media-autobuild_suite (64bit): compiling global tools
+	[311mStarting 64bit compilation of global tools(B[m
+[1mfreetype2 2.8.0 (B[m........................................... [[32mUp-to-date(B[m]
+  Running git update for harfbuzz...
+[1mharfbuzz git (B[m.............................................. [[32mUp-to-date(B[m]
+[1mfribidi 0.19.7 (B[m............................................ [[32mUp-to-date(B[m]
+[1mrubberband 1.8.1 (B[m.......................................... [[32mUp-to-date(B[m]
+]0;media-autobuild_suite (64bit): compiling audio tools
+	[311mStarting 64bit compilation of audio tools(B[m
+  Running git update for fdk-aac...
+[1mfdk-aac git (B[m............................................... [[32mUp-to-date(B[m]
+  Running git update for libsoxr...
+[1mlibsoxr git (B[m............................................... [[32mUp-to-date(B[m]
+]0;media-autobuild_suite (64bit): compiling video tools
+	[311mStarting 64bit compilation of video tools(B[m
+[1msdl2 2.0.5 (B[m................................................ [[32mUp-to-date(B[m]
+  Running git clone for libbluray...
+[1m┌ libbluray git (B[m..................................... [[311mRecently updated(B[m]
+├ Running git.submodule...
+├ Running autoreconf...
+Likely error:
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: aclocal terminated by signal: 2
+autom4te: /usr/bin/m4 terminated by signal: 2
+[31mautoreconf failed. Check C:/Development/media-autobuild_suite/build/libbluray-git/ab-suite.autoreconf.log(B[m
+[31mThis is required for other packages, so this script will exit.(B[m
+  Creating diagnostics file...
+
+[32mAll relevant logs have been anonymously uploaded to https://0x0.st/7Pu.zip
+[32mCopy and paste [31m[logs.zip](https://0x0.st/7Pu.zip)[32m in the GitHub issue.(B[m
+Make sure the suite is up-to-date before reporting an issue. It might've been fixed already.
+Try running the build again at a later time.
+
+]0;media-autobuild_suite (64bit)
+	[311mStarting 64bit compilation of all tools(B[m
+Imported FFmpeg options from ffmpeg_options.txt
+License: nonfree
+Imported mpv options from mpv_options.txt
+]0;media-autobuild_suite (64bit): compiling global tools
+	[311mStarting 64bit compilation of global tools(B[m
+[1mfreetype2 2.8.0 (B[m........................................... [[32mUp-to-date(B[m]
+  Running git clone for harfbuzz...
+[1m┌ harfbuzz git (B[m...................................... [[311mRecently updated(B[m]
+├ Running autogen...
+├ Running uninstall...
+├ Running configure...
+Likely error:
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '1050515' is supported by ustar format... yes
+checking whether GID '1049089' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether make supports nested variables... (cached) yes
+checking for style of include used by make... GNU
+checking for x86_64-w64-mingw32-gcc... gcc
+checking whether the C compiler works... [31mconfigure failed. Check C:/Development/media-autobuild_suite/build/harfbuzz-git/build-64bit/ab-suite.configure.log(B[m
+[31mThis is required for other packages, so this script will exit.(B[m
+  Creating diagnostics file...
+
+
+[32mAll relevant logs have been anonymously uploaded to https://0x0.st/7PS.zip
+[32mCopy and paste [31m[logs.zip](https://0x0.st/7PS.zip)[32m in the GitHub issue.(B[m
+Make sure the suite is up-to-date before reporting an issue. It might've been fixed already.
+Try running the build again at a later time.
+]0;media-autobuild_suite (64bit)
+	[311mStarting 64bit compilation of all tools(B[m
+Imported FFmpeg options from ffmpeg_options.txt
+License: nonfree
+Imported mpv options from mpv_options.txt
+]0;media-autobuild_suite (64bit): compiling global tools
+	[311mStarting 64bit compilation of global tools(B[m
+[1mfreetype2 2.8.0 (B[m........................................... [[32mUp-to-date(B[m]
+  Running git update for harfbuzz...
+[1m┌ harfbuzz git (B[m......................................... [[311mFiles missing(B[m]
+├ Running configure...
+├ Running make...
+├ Running install...
+├ Stripping...
+[1m└ harfbuzz-git (B[m............................................... [[312mUpdated(B[m]
+[1mfribidi 0.19.7 (B[m............................................ [[32mUp-to-date(B[m]
+[1mrubberband 1.8.1 (B[m.......................................... [[32mUp-to-date(B[m]
+]0;media-autobuild_suite (64bit): compiling audio tools
+	[311mStarting 64bit compilation of audio tools(B[m
+  Running git update for fdk-aac...
+[1mfdk-aac git (B[m............................................... [[32mUp-to-date(B[m]
+  Running git update for libsoxr...
+[1mlibsoxr git (B[m............................................... [[32mUp-to-date(B[m]
+]0;media-autobuild_suite (64bit): compiling video tools
+	[311mStarting 64bit compilation of video tools(B[m
+[1msdl2 2.0.5 (B[m................................................ [[32mUp-to-date(B[m]
+  Running git update for ffmpeg...
+[1mffmpeg git (B[m................................................ [[32mUp-to-date(B[m]
+
+	[311mFinished 64bit compilation of all tools(B[m
+
+	[311mDeleting status files...(B[m
+
+	[32mZipping man files...(B[m
+	[311mDeleting temporary build dirs...(B[m
+
+	[32mCompilation successful.(B[m
+	[32mThis window will close automatically in 5 seconds.(B[m

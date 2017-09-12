@@ -1,0 +1,22 @@
+
+Build start: 2017-09-11 14:48:40 +0100
+
+Build start: 2017-09-11 14:53:14 +0100
+
+Build start: 2017-09-11 14:55:33 +0100
+
+Build start: 2017-09-11 14:57:42 +0100
+
+Build start: 2017-09-11 14:25:31 +0100
+ffmpeg
+2017-09-11 08:02:15 -0400: Ilia Valiakhmetov - 86eb50549a
+    Changelog: add vp9 tile threading support
+2017-09-11 08:01:59 -0400: Ronald S. Bultje - 9bab39dee5
+    vp9: fix compilation with threading disabled.
+
+
+Build start: 2017-09-11 11:53:36 +0100
+
+Build start: 2017-09-11 12:14:35 +0100
+
+Build start: 2017-09-11 12:21:03 +0100

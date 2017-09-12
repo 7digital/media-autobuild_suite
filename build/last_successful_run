@@ -1,0 +1,2 @@
+#!/bin/bash
+bash /build/media-suite_compile.sh --cpuCount=2 --build32=no --build64=yes --deleteSource=y --mp4box=n --vpx=n --x264=no --x265=n --other265=n --flac=n --fdkaac=y --mediainfo=n --sox=n --ffmpeg=static --ffmpegUpdate=n --ffmpegChoice=y --mplayer=n --mpv=n --license=nonfree --stripping=y --packing=n --xpcomp=n --rtmpdump=n --logging=y --bmx=n --standalone=n --aom=n --daala=n --faac=n --ffmbc=n --curl=n --cyanrip=no

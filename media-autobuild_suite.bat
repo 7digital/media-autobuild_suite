@@ -1296,40 +1296,7 @@ if %build64%==yes (
     )
 
 :updatebase
-echo.-------------------------------------------------------------------------------
-echo.update autobuild suite
-echo.-------------------------------------------------------------------------------
-
 cd %build%
-set scripts=compile helper update
-for %%s in (%scripts%) do (
-    if not exist "%build%\media-suite_%%s.sh" (
-        %instdir%\%msys2%\usr\bin\wget.exe -t 20 --retry-connrefused --waitretry=2 -c ^
-        https://github.com/jb-alvarado/media-autobuild_suite/raw/master/build/media-suite_%%s.sh
-        )
-    )
-if %updateSuite%==y (
-    if not exist %instdir%\update_suite.sh (
-        echo -------------------------------------------------------------------------------
-        echo. Creating suite update file...
-        echo.
-        echo. Run this file by dragging it to mintty before the next time you run
-        echo. the suite and before reporting an issue.
-        echo.
-        echo. It needs to be run separately and with the suite not running!
-        echo -------------------------------------------------------------------------------
-        )
-    (
-        echo.#!/bin/bash
-        echo.
-        echo.# Run this file by dragging it to mintty shortcut.
-        echo.# Be sure the suite is not running before using it!
-        echo.
-        echo.update=yes
-        %instdir%\%msys2%\usr\bin\sed -n '/start suite update/,/end suite update/p' ^
-            %build%/media-suite_update.sh
-        )>%instdir%\update_suite.sh
-    )
 
 :createFolders
 if %build32%==yes call :createBaseFolders local32
@@ -1394,16 +1361,6 @@ if [%removefstab%]==[yes] (
 
 :update
 if not exist %build%\last_run if exist %build%\update.log del %build%\update.log
-%mintty% -t "update autobuild suite" %instdir%\%msys2%\usr\bin\script.exe -a -q -f %build%\update.log ^
--c '/usr/bin/bash --login /build/media-suite_update.sh --build32=%build32% --build64=%build64%'
-
-if exist "%build%\update_core" (
-    echo.-------------------------------------------------------------------------------
-    echo.critical updates
-    echo.-------------------------------------------------------------------------------
-    %instdir%\%msys2%\usr\bin\sh.exe -l -c "pacman -S --needed --noconfirm --asdeps bash pacman msys2-runtime"
-    del "%build%\update_core"
-    )
 
 if %msys2%==msys32 (
     echo.-------------------------------------------------------------------------------
